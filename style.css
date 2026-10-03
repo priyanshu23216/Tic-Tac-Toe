@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+    color-scheme: dark;
+    font-family: "DM Sans", system-ui, sans-serif;
+    color: #eef0ff;
+    background: #0c1020;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 64px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(67, 97, 238, 0.22), transparent 42%),
+        radial-gradient(ellipse at 85% 15%, rgba(157, 78, 221, 0.18), transparent 38%),
+        #0c1020;
+}
+
+h1 {
+    margin: 0 0 32px;
+    color: #b8c7ff;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 1.1;
+    text-align: center;
+}
+
+#container {
+    width: min(88vw, 390px);
+    aspect-ratio: 1;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    border: 1px solid #293252;
+    border-radius: 28px;
+    background: rgba(20, 26, 47, 0.92);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.38),
+        0 4px 12px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+}
+
+.myclass {
+    min-width: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid #303b60;
+    border-radius: 18px;
+    background: #1b2340;
+    color: #a9bdff;
+    font: inherit;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.myclass:hover {
+    transform: translateY(-2px);
+    border-color: #7167d8;
+    background: #252d50;
+    box-shadow: 0 8px 18px rgba(94, 99, 210, 0.18);
+}
+
+.myclass:active {
+    transform: scale(0.97);
+}
+
+.myclass:focus-visible,
+.reset-button:focus-visible {
+    outline: 3px solid #a78bfa;
+    outline-offset: 3px;
+}
+
+.reset-button {
+    margin-top: 28px;
+    padding: 14px 24px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #5278f5, #925de4);
+    color: #fff;
+    font: inherit;
+    font-size: 0.98rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(112, 91, 226, 0.25);
+    transition:
+        transform 160ms ease,
+        background 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.reset-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(120deg, #6689ff, #a875f0);
+    box-shadow: 0 12px 24px rgba(112, 91, 226, 0.32);
+}
+
+.reset-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 40px 16px;
+    }
+
+    #container {
+        padding: 10px;
+        gap: 9px;
+        border-radius: 22px;
+    }
+
+    .myclass {
+        border-radius: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
